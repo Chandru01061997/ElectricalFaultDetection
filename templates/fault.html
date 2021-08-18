@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>Electric Fault Detection-app</title>
+    </head>
+    <body style = "background-color: rgb(77, 187, 238);">
+        <h1 style="text-align: center;color: rgb(2, 6, 245);">Based on the current and voltage values predict the fault</h1>
+        <h3 style="text-align: center;color: rgb(43, 38, 32);">
+          Try out the values - I => [-626.240507, -4.015582, -36.227918, -0.222974, 0.547918, -0.324944] - o/p = LG
+        </h3>
+        <h3 style="text-align: center;color: rgb(43, 38, 32);">
+                               II=> [700.047041, 48.729382, 39.796815, 0.077063, -0.408456, 0.331393] - o/p = LLG
+        </h3>
+        <form action="/electricfaultdetection" method="POST">
+          <ul> 
+            <li>
+              <label for="Current-'a'phase">Current-'a'phase (Ia):</label>
+              <input type = 'number' step = '0.0000001' name = "Current-'a'phase" placeholder = 'Current value for a phase (Ia)' required = 'required' />
+            </li>
+            <li>
+              <label for="Current-'b'phase">Current-'b'phase (Ib):</label>
+              <input type = 'number' step = '0.0000001' name = "Current-'b'phase" placeholder = 'Current value for b phase (Ib)' required = 'required' />
+            </li>
+            <li>
+              <label for="Current-'c'phase">Current-'c'phase (Ic):</label>
+              <input type = 'number' step = '0.0000001' name = "Current-'c'phase" placeholder = 'Current value for c phase (Ic)' required = 'required' />
+            </li>
+            <li>
+              <label for="Voltage-'a'phase">Voltage-'a'phase (Va):</label>
+              <input type = 'number' step = '0.0000001' name = "Voltage-'a'phase" placeholder = 'Voltage value for a phase (Va)' required = 'required' />
+            </li>
+            <li>
+              <label for="Voltage-'b'phase">Voltage-'b'phase (Vb):</label>
+              <input type = 'number' step = '0.0000001' name = "Voltage-'b'phase" placeholder = 'Voltage value for b phase (Vb)' required = 'required' />
+            </li>
+            <li>
+              <label for="Voltage-'c'phase">Voltage-'c'phase (Vc):</label>
+              <input type = 'number' step = '0.0000001' name = "Voltage-'c'phase" placeholder = 'Voltage value for c phase (Vc)' required = 'required' />
+            </li>
+            <button type = 'Submit'>Submit</button>
+            <li>
+              <label for="output">Prediction:</label>
+              <textarea id="text" name="output" placeholder="Predicted Result">{{final_output}}</textarea>
+            </li>
+          </ul>
+            <style>
+                form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 500px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid rgb(26, 25, 24);
+  border-radius: 1em;
+  color: rgb(30, 31, 27);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1.5em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 350px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 3px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: rgb(238, 10, 10);
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align:top;
+
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin: 2rem;
+  position:relative;
+}
+            </style>
+        </form>
+        <h4 style="text-align: right;color: rgb(24, 24, 31);">-by Chandra Sekar(Machine Learning Engineer)</h4>
+        <h4 style="text-align: right;color: rgb(24, 24, 31);">Contact:- +91-8754092040/+91-8072258559</h4>
+    </body>
+</html>
